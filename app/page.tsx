@@ -8,14 +8,14 @@ const features = [
         name:"Store your PDF documents",
         description: "Keep all your important PDF files securely stored and easily accessible anytime, anywhere",
         icon: GlobeIcon,
-        id:1
+
     },
 
     {
         name:"Store your PDF documents",
         description: "Keep all your important PDF files securely stored and easily accessible anytime, anywhere",
         icon: BrainCogIcon,
-        id:2
+
     },
 
 
@@ -31,19 +31,17 @@ const features = [
         name:"Store your PDF documents",
         description: "Keep all your important PDF files securely stored and easily accessible anytime, anywhere",
         icon: MonitorSmartphoneIcon,
-        id:4
+
     },
     {
         name:"Store your PDF documents",
         description: "Keep all your important PDF files securely stored and easily accessible anytime, anywhere",
         icon: ZapIcon,
-        id:5
     },
     {
         name:"Store your PDF documents",
         description: "Keep all your important PDF files securely stored and easily accessible anytime, anywhere",
         icon: ServerCogIcon,
-        id:6
     },
 ]
 
@@ -85,21 +83,21 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
-                    <dl className="mx-auto grid max-w-2xl grids-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
-                        {features.map((feature) => (
-                            <div className="relative pl-9">
-                                <dt className="inline font-semibold text-gray-900">
-                                    <feature.icon 
-                                    aria-hidden="true"
-                                    className="absolute left-1 top-1 h-5 w-5 text-green-600"
-                                    />
-                                </dt>
-                                <dd>
-                                    {feature.description}
-                                </dd>
-                            </div>
-                        )) }
-                        </dl>
+                <dl className="mx-auto grid max-w-2xl grids-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
+  {features.map((feature, index) => (
+    <div key={index} className="relative pl-9"> {index}
+      <dt className="inline font-semibold text-gray-900">
+        <feature.icon
+          aria-hidden="true"
+          className="absolute left-1 top-1 h-5 w-5 text-green-600"
+        />
+      </dt>
+      <dd>
+        {feature.description}
+      </dd>
+    </div>
+  ))}
+</dl>
                 </div>
             </div>
         </main>
